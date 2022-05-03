@@ -56,9 +56,22 @@ def get_args():
     '''
     parser.add_argument('--model', type = str,
                          default = 'base',
-                         help = 'model to be used, available: mlp, svm, rf, naive, knn, base, trivial, dt, rf')
+                         help='model to be used, available: mlp, svm, rf, naive, knn, base, trivial, dt, rf')
     parser.add_argument('--k', type = int, default = 5,
                          help = 'number of neighbors for KNN')
+    parser.add_argument('--n_estimators', type = int, default = 100,
+                         help = 'number of estimators for RF')
+    parser.add_argument('--rf_max_depth', type = int, default = 5,
+                         help = 'max depth for RF')
+    parser.add_argument('--svm_kernel', type = str, default = 'rbf',
+                         help = 'kernel for SVM')
+    parser.add_argument('--svm_c', type = float, default = 5,
+                         help = 'c for SVM')
+    parser.add_argument('--dt_max_depth', type = int, default = 3,
+                         help = 'max depth for DT')
+    parser.add_argument('--var_smoothing', type = float, default = 0.1,
+                         help = 'variance smoothing for naive bayes')
+
     args = parser.parse_args()
 
     return args
