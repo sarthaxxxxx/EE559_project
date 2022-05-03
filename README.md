@@ -28,7 +28,7 @@ To run and reproduce the results of the project, please run 'run.sh', in the ter
 
  Contacts
  --------
- Sarthak Kumar Maharana - email: maharana@usc.edu
+ Sarthak Kumar Maharana - email: maharana@usc.edu \
  Shoumik Nandi - email: shoumikn@usc.edu
  
  
