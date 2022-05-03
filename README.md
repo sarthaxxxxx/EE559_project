@@ -19,7 +19,16 @@ over the baseline.
     $ pip install requirements.txt
     
 ## Running of the scripts
-To run and reproduce the results of the project, please run 'run.sh' as 
+To run and reproduce the results of the project, please run 'run.sh', in the terminal, as:
+
     $ bash run.sh
     
+ However, if you wish to make certain changes, please do so at configs/cfg.py. Everything is self-explanatory. 
+ 
+
+ Contacts
+ --------
+ Sarthak Kumar Maharana - email: maharana@usc.edu
+ Shoumik Nandi - email: shoumikn@usc.edu
+ 
  
