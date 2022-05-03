@@ -1,6 +1,6 @@
 # The Effect of Conditioning of Trigonometric Transformations of Dates with Meteorological Data in Forest Fires Prediction : An Experimental Study
 
-This repository houses the implementation of the USC's EE559 Course Project by Sarthak Kumar Maharana and Shoumik Nandi.
+This repository houses the implementation of USC's EE559 Course Project by Sarthak Kumar Maharana and Shoumik Nandi.
 
 ## Abstract 
 In this work, we study the effects of conditioning a trigonometric transformation of dates with meteorological data, that would aid in predicting 
