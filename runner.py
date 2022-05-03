@@ -70,23 +70,12 @@ def load_models(args, train_x, train_y, test_x, test_y):
         return accuracy_score(test_y, preds), preds
     elif args.model == 'svm':
         model = svm.SVC(
-            kernel = 'linear',
+            kernel = args.svm_kernel,
             gamma = 'auto',
             random_state = 2, 
-            C = 5
+            C = args.svm_c
         )
         model.fit(train_x.to_numpy(), train_y)
-        preds = model.predict(test_x.to_numpy())
-        return accuracy_score(test_y, preds), preds
-    elif args.model == 'mlp':
-        model = MLPClassifier(
-            hidden_layer_sizes = (1000,),
-            activation = 'tanh',
-            max_iter = 1000,
-            alpha = 0.01,
-            learning_rate_init = 0.0001,
-        )
-        model.fit(train_x, train_y)
         preds = model.predict(test_x.to_numpy())
         return accuracy_score(test_y, preds), preds
     elif args.model == 'dt':
@@ -94,23 +83,23 @@ def load_models(args, train_x, train_y, test_x, test_y):
         model = DecisionTreeClassifier(
             criterion = 'gini', 
             random_state = 2,
-            max_depth = 3
+            max_depth = args.dt_max_depth
             )        
         model.fit(train_x.to_numpy(), train_y)
         preds = model.predict(test_x.to_numpy())
         return accuracy_score(test_y, preds), preds
     elif args.model == 'rf':
         model = RandomForestClassifier(
-            n_estimators = 100,
+            n_estimators = args.n_estimators,
             criterion = 'gini',
-            max_depth = 5, 
+            max_depth = args.rf_max_depth, 
             random_state = 2 
         )
         model.fit(train_x.to_numpy(), train_y)
         preds = model.predict(test_x.to_numpy())
         return accuracy_score(test_y, preds), preds
     elif args.model == 'naive':
-        model = GaussianNB(var_smoothing = 1e-1)
+        model = GaussianNB(var_smoothing = args.var_smoothing)
         model.fit(train_x.to_numpy(), train_y)
         preds = model.predict(test_x.to_numpy())
         return accuracy_score(test_y, preds), preds
