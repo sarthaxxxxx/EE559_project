@@ -58,6 +58,11 @@ def load_models(args, train_x, train_y, test_x, test_y):
         model = Trivial(train_x.to_numpy(), train_y)
         preds = model.fit(test_y)
         return accuracy_score(test_y, preds), preds
+    elif args.model == 'perceptron':
+        model = Perceptron()
+        _, weights = model._fit(train_x.to_numpy(), train_y)
+        preds = model._classify(test_x.to_numpy(), weights)
+        return accuracy_score(test_y, preds), preds
     elif args.model == 'knn':
         model = KNN(
             train_x.to_numpy(), 
