@@ -56,7 +56,7 @@ def get_args():
     '''
     parser.add_argument('--model', type = str,
                          default = 'base',
-                         help='model to be used, available: mlp, svm, rf, naive, knn, base, trivial, dt, rf')
+                         help='model to be used, available: mlp, svm, rf, naive, knn, base, trivial, dt, rf, perceptron')
     parser.add_argument('--k', type = int, default = 5,
                          help = 'number of neighbors for KNN')
     parser.add_argument('--n_estimators', type = int, default = 100,
